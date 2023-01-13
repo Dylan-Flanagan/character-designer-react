@@ -1,24 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
+import Controls from './Components/Controls/Controls.js';
+import Display from './Components/Display/Display.js';
+import { useState } from 'react';
 
 function App() {
+  const [head, setHead] = useState('head');
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main>
+      <Controls {...{ setHead }} />
+      <Display {...{ head }} />
+    </main>
   );
 }
 
